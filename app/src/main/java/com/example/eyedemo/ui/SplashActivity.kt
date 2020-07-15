@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.animation.AlphaAnimation
 import android.view.animation.Animation
 import android.view.animation.ScaleAnimation
+import com.example.eyedemo.R
 import com.example.eyedemo.ui.common.ui.BaseActivity
 import kotlinx.coroutines.Job
 
@@ -42,7 +43,7 @@ class SplashActivity : BaseActivity() {
     }
 
     private fun requestWriteExternalStoragePersmission() {
-
+        setContentView(R.layout.activity_splash)
 
     }
 }

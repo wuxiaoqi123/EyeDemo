@@ -5,6 +5,8 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.annotation.ColorRes
 import androidx.appcompat.app.AppCompatActivity
 import com.example.eyedemo.R
@@ -103,8 +105,10 @@ open class BaseActivity : AppCompatActivity() {
     }
 
     protected open fun setupViews() {
-//        val navigateBefore = findViewById<ImageView>(R.id.ivNavigateBefore)
-
+        val navigateBefore = findViewById<ImageView>(R.id.ivNavigateBefore)
+        val tvTitle = findViewById<TextView>(R.id.tvTitle)
+        navigateBefore?.setOnClickListener { finish() }
+        tvTitle?.isSelected = true
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)

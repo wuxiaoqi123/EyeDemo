@@ -13,6 +13,7 @@ import com.example.eyedemo.R
 import com.example.eyedemo.event.MessageEvent
 import com.example.eyedemo.extension.logD
 import com.example.eyedemo.util.ActivityCollector
+import com.example.eyedemo.util.ShareUtil
 import com.gyf.immersionbar.ImmersionBar
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
@@ -123,7 +124,7 @@ open class BaseActivity : AppCompatActivity() {
     }
 
     protected fun share(shareContent: String, shareType: Int) {
-
+        ShareUtil.share(this, shareContent, shareType)
     }
 
     protected fun showDialogShare(shareContent: String) {

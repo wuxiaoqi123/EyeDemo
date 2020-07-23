@@ -15,6 +15,7 @@ import com.example.eyedemo.R
 import com.example.eyedemo.event.MessageEvent
 import com.example.eyedemo.extension.logD
 import com.example.eyedemo.ui.common.callback.RequestLifecycle
+import com.example.eyedemo.util.ShareUtil
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
@@ -166,7 +167,7 @@ open class BaseFragment : Fragment(), RequestLifecycle {
     }
 
     protected fun share(shareContent: String, shareType: Int) {
-
+        ShareUtil.share(activity, shareContent, shareType)
     }
 
     protected fun showDialogShare(shareContent: String) {

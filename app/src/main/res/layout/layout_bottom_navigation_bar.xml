@@ -131,7 +131,7 @@
         tools:background="@color/blackAlpha50" />
 
     <androidx.constraintlayout.widget.Group
-        android:id="@+id/btn_Community"
+        android:id="@+id/btnCommunity"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="@id/tvCommunity"

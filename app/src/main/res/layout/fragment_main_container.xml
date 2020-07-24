@@ -6,7 +6,7 @@
 
     <include layout="@layout/layout_main_page_title_bar" />
 
-    <view
+    <View
         android:id="@+id/viewHorizontalLine"
         android:layout_width="match_parent"
         android:layout_height="1px"

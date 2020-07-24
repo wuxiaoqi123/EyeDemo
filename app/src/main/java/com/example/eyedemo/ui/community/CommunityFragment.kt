@@ -1,4 +1,4 @@
-package com.example.eyedemo.ui.home
+package com.example.eyedemo.ui.community
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,18 +10,16 @@ import com.example.eyedemo.event.MessageEvent
 import com.example.eyedemo.logic.model.TabEntity
 import com.example.eyedemo.ui.common.ui.BaseViewPagerFragment
 import com.flyco.tablayout.listener.CustomTabEntity
-import kotlinx.android.synthetic.main.layout_main_page_title_bar.*
 
-class HomePageFragment : BaseViewPagerFragment() {
+class CommunityFragment : BaseViewPagerFragment() {
 
     companion object {
-        fun newInstance() = HomePageFragment()
+        fun newInstance() = CommunityFragment()
     }
 
     override val createTitles = ArrayList<CustomTabEntity>().apply {
-        add(TabEntity("发现"))
         add(TabEntity("推荐"))
-        add(TabEntity("日报"))
+        add(TabEntity("关注"))
     }
 
     override val createFragments: Array<Fragment> = arrayOf()
@@ -40,13 +38,8 @@ class HomePageFragment : BaseViewPagerFragment() {
         )
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        ivCalendar.visibility = View.VISIBLE
-        viewPager?.currentItem = 1
-    }
-
     override fun onMessageEvent(message: MessageEvent) {
         super.onMessageEvent(message)
     }
+
 }

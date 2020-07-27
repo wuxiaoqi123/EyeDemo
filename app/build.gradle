@@ -68,6 +68,11 @@ dependencies {
     implementation 'com.permissionx.guolindev:permissionx:1.2.2'
     implementation 'androidx.viewpager2:viewpager2:1.0.0'
     implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
-
+    implementation 'com.scwang.smart:refresh-header-material:2.0.0'
+    implementation 'com.scwang.smart:refresh-layout-kernel:2.0.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.6.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.1'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.5.0'
+    implementation 'com.github.bumptech.glide:okhttp3-integration:4.9.0'
 
 }

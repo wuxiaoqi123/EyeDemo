@@ -9,6 +9,7 @@ import com.example.eyedemo.R
 import com.example.eyedemo.event.MessageEvent
 import com.example.eyedemo.logic.model.TabEntity
 import com.example.eyedemo.ui.common.ui.BaseViewPagerFragment
+import com.example.eyedemo.ui.home.discovery.DiscoveryFragment
 import com.flyco.tablayout.listener.CustomTabEntity
 import kotlinx.android.synthetic.main.layout_main_page_title_bar.*
 
@@ -24,7 +25,11 @@ class HomePageFragment : BaseViewPagerFragment() {
         add(TabEntity("日报"))
     }
 
-    override val createFragments: Array<Fragment> = arrayOf()
+    override val createFragments: Array<Fragment> = arrayOf(
+        DiscoveryFragment.newInstance(),
+        DiscoveryFragment.newInstance(),
+        DiscoveryFragment.newInstance()
+    )
 
     override fun onCreateView(
         inflater: LayoutInflater,

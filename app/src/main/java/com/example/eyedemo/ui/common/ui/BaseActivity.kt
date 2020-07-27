@@ -118,9 +118,8 @@ open class BaseActivity : AppCompatActivity() {
     }
 
     open fun setStatusBarBackground(@ColorRes statusBarColor: Int) {
-        ImmersionBar.with(this)
-            .autoStatusBarDarkModeEnable(true, 0.2f)
-            .statusBarColor(statusBarColor)
+        ImmersionBar.with(this).autoStatusBarDarkModeEnable(true, 0.2f)
+            .statusBarColor(statusBarColor).fitsSystemWindows(true).init()
     }
 
     protected fun share(shareContent: String, shareType: Int) {

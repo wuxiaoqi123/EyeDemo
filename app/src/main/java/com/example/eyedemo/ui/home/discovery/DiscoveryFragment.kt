@@ -13,16 +13,16 @@ import kotlinx.android.synthetic.main.fragment_refresh_layout.*
 
 class DiscoveryFragment : BaseFragment() {
 
+    companion object {
+
+        fun newInstance() = DiscoveryFragment()
+    }
+
     private val viewModel by lazy {
         ViewModelProvider(
             this,
             InjectorUtil.getDiscoveryViewModelFactory()
         ).get(DiscoveryViewModel::class.java)
-    }
-
-    companion object {
-
-        fun newInstance() = DiscoveryFragment()
     }
 
     override fun onCreateView(

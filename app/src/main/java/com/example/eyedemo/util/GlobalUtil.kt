@@ -118,4 +118,8 @@ object GlobalUtil {
     fun isWechatInstalled() = isInstalled("com.tencent.mm")
 
     fun isWeiboInstalled() = isInstalled("com.sina.weibo")
+
+    fun getDimension(resId: Int): Int {
+        return EyepetizerApplication.context.resources.getDimensionPixelOffset(resId)
+    }
 }

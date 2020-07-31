@@ -13,3 +13,18 @@ fun Int.inflate(parent: ViewGroup, attachToRoot: Boolean = false): View {
 fun Int.showToast(duration: Int = Toast.LENGTH_SHORT) {
     Toast.makeText(EyepetizerApplication.context, this, duration).show()
 }
+
+fun Int.conversionVideoDuration(): String {
+    val minute = 1 * 60
+    val hour = 60 * minute
+    val day = 24 * hour
+
+    return when {
+        this < day -> {
+            String.format("%02d:%02d", this / minute, this % 60)
+        }
+        else -> {
+            String.format("%02d:%02d:%02d", this / hour, (this % hour) / minute, this % 60)
+        }
+    }
+}

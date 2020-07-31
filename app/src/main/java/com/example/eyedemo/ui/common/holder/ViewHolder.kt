@@ -27,6 +27,8 @@ import com.example.eyedemo.Const.ItemViewType.Companion.VIDEO_SMALL_CARD
 import com.example.eyedemo.R
 import com.example.eyedemo.extension.inflate
 import com.example.eyedemo.logic.model.*
+import com.example.eyedemo.ui.home.discovery.DiscoveryAdapter
+import com.zhpan.bannerview.BannerViewPager
 
 
 class EmptyViewHolder(view: View) : RecyclerView.ViewHolder(view)
@@ -65,9 +67,9 @@ class TextCardViewFooter3ViewHolder(view: View) : RecyclerView.ViewHolder(view) 
     val ivTooterInto3 = view.findViewById<ImageView>(R.id.ivTooterInto3)
 }
 
-//class HorizontalScrollCardViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-//    val bannerViewPager: BannerViewPager<Discovery.ItemX, DiscoveryAdapter.HorizontalScrollCardAdapter.ViewHolder> = view.findViewById(R.id.bannerViewPager)
-//}
+class HorizontalScrollCardViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    val bannerViewPager: BannerViewPager<Discovery.ItemX, DiscoveryAdapter.HorizontalScrollCardAdapter.ViewHolder> = view.findViewById(R.id.bannerViewPager)
+}
 
 class SpecialSquareCardCollectionViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)

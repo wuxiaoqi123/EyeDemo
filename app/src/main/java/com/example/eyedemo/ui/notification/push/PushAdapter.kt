@@ -2,10 +2,15 @@ package com.example.eyedemo.ui.notification.push
 
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.eyedemo.R
 import com.example.eyedemo.extension.inflate
+import com.example.eyedemo.extension.load
 import com.example.eyedemo.logic.model.PushMessage
+import com.example.eyedemo.util.ActionUrlUtil
+import com.example.eyedemo.util.DateUtil
 
 class PushAdapter(val fragment: PushFragment, var dataList: List<PushMessage.Message>) :
     RecyclerView.Adapter<PushAdapter.ViewHolder>() {
@@ -13,8 +18,10 @@ class PushAdapter(val fragment: PushFragment, var dataList: List<PushMessage.Mes
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val holder = ViewHolder(R.layout.item_notification_push.inflate(parent))
         holder.itemView.setOnClickListener {
-            val item = dataList[holder.]
+            val item = dataList[holder.bindingAdapterPosition]
+            ActionUrlUtil.process(fragment, item.actionUrl, item.title)
         }
+        return holder
     }
 
     override fun getItemCount(): Int {
@@ -22,10 +29,18 @@ class PushAdapter(val fragment: PushFragment, var dataList: List<PushMessage.Mes
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        dataList[position].run {
+            holder.ivAvatar.load(icon) { error(R.mipmap.ic_launcher) }
+            holder.tvTitle.text = title
+            holder.tvTime.text = DateUtil.getConvertedDate(date)
+            holder.tvContent.text = content
+        }
     }
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-
+        val tvTitle: TextView = view.findViewById(R.id.tvTitle)
+        val tvTime: TextView = view.findViewById(R.id.tvTime)
+        val tvContent: TextView = view.findViewById(R.id.tvContent)
+        val ivAvatar: ImageView = view.findViewById(R.id.ivAvatar)
     }
 }

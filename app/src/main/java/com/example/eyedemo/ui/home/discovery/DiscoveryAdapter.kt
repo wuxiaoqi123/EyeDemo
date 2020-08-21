@@ -16,6 +16,7 @@ import com.example.eyedemo.logic.model.Discovery
 import com.example.eyedemo.ui.LoginActivity
 import com.example.eyedemo.ui.common.holder.*
 import com.example.eyedemo.ui.common.view.GridListItemDecoration
+import com.example.eyedemo.util.ActionUrlUtil
 import com.example.eyedemo.util.GlobalUtil
 import com.zhpan.bannerview.BaseBannerAdapter
 import com.zhpan.bannerview.BaseViewHolder
@@ -291,7 +292,8 @@ class DiscoveryAdapter(val fragment: DiscoveryFragment, val dataList: List<Disco
         }
     }
 
-    inner class HorizontalScrollCardAdapter : BaseBannerAdapter<Discovery.ItemX, HorizontalScrollCardAdapter.ViewHolder>() {
+    inner class HorizontalScrollCardAdapter :
+        BaseBannerAdapter<Discovery.ItemX, HorizontalScrollCardAdapter.ViewHolder>() {
 
         inner class ViewHolder(val view: View) : BaseViewHolder<Discovery.ItemX>(view) {
 
@@ -312,25 +314,40 @@ class DiscoveryAdapter(val fragment: DiscoveryFragment, val dataList: List<Disco
             return ViewHolder(view)
         }
 
-        override fun onBind(holder: ViewHolder, data: Discovery.ItemX, position: Int, pageSize: Int) {
+        override fun onBind(
+            holder: ViewHolder,
+            data: Discovery.ItemX,
+            position: Int,
+            pageSize: Int
+        ) {
             holder.bindData(data, position, pageSize)
         }
     }
 
-    inner class SpecialSquareCardCollectionAdapter(val dataList: List<Discovery.ItemX>) : RecyclerView.Adapter<SpecialSquareCardCollectionAdapter.ViewHolder>() {
+    inner class SpecialSquareCardCollectionAdapter(val dataList: List<Discovery.ItemX>) :
+        RecyclerView.Adapter<SpecialSquareCardCollectionAdapter.ViewHolder>() {
 
         inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             val ivPicture = view.findViewById<ImageView>(R.id.ivPicture)
             val tvTitle = view.findViewById<TextView>(R.id.tvTitle)
         }
 
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SpecialSquareCardCollectionAdapter.ViewHolder {
-            return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_special_square_card_collection_type_item, parent, false))
+        override fun onCreateViewHolder(
+            parent: ViewGroup,
+            viewType: Int
+        ): SpecialSquareCardCollectionAdapter.ViewHolder {
+            return ViewHolder(
+                LayoutInflater.from(parent.context)
+                    .inflate(R.layout.item_special_square_card_collection_type_item, parent, false)
+            )
         }
 
         override fun getItemCount() = dataList.size
 
-        override fun onBindViewHolder(holder: SpecialSquareCardCollectionAdapter.ViewHolder, position: Int) {
+        override fun onBindViewHolder(
+            holder: SpecialSquareCardCollectionAdapter.ViewHolder,
+            position: Int
+        ) {
             val item = dataList[position]
             holder.ivPicture.load(item.data.image, 4f)
             holder.tvTitle.text = item.data.title
@@ -338,15 +355,22 @@ class DiscoveryAdapter(val fragment: DiscoveryFragment, val dataList: List<Disco
         }
     }
 
-    inner class ColumnCardListAdapter(val dataList: List<Discovery.ItemX>) : RecyclerView.Adapter<ColumnCardListAdapter.ViewHolder>() {
+    inner class ColumnCardListAdapter(val dataList: List<Discovery.ItemX>) :
+        RecyclerView.Adapter<ColumnCardListAdapter.ViewHolder>() {
 
         inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             val ivPicture = view.findViewById<ImageView>(R.id.ivPicture)
             val tvTitle = view.findViewById<TextView>(R.id.tvTitle)
         }
 
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ColumnCardListAdapter.ViewHolder {
-            return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_column_card_list_type_item, parent, false))
+        override fun onCreateViewHolder(
+            parent: ViewGroup,
+            viewType: Int
+        ): ColumnCardListAdapter.ViewHolder {
+            return ViewHolder(
+                LayoutInflater.from(parent.context)
+                    .inflate(R.layout.item_column_card_list_type_item, parent, false)
+            )
         }
 
         override fun getItemCount() = dataList.size
@@ -361,7 +385,12 @@ class DiscoveryAdapter(val fragment: DiscoveryFragment, val dataList: List<Disco
 
     inner class SpecialSquareCardCollectionItemDecoration : RecyclerView.ItemDecoration() {
 
-        override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
+        override fun getItemOffsets(
+            outRect: Rect,
+            view: View,
+            parent: RecyclerView,
+            state: RecyclerView.State
+        ) {
             val position = parent.getChildAdapterPosition(view) // item position
             val count = parent.adapter?.itemCount //item count
             val spanIndex = (view.layoutParams as GridLayoutManager.LayoutParams).spanIndex

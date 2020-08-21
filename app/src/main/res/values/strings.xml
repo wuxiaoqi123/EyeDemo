@@ -10,4 +10,17 @@
     <string name="share_unknown_error">分享出现未知异常</string>
     <string name="plus_follow">+关注</string>
 
+    <!-- 登录 -->
+    <string name="forgot_password">找回密码</string>
+    <string name="login_tips">登录后即可关注作者、\n发表评论、同步收藏视频和播放记录</string>
+    <string name="Input_iphone_or_email_tips">请输入手机号/邮箱地址</string>
+    <string name="input_password_tips">请输入密码</string>
+    <string name="login">登录</string>
+    <string name="user_register">用户注册</string>
+    <string name="author_login">作者登录</string>
+    <string name="login_register_agree_tips">登录或注册即同意开眼</string>
+    <string name="user_service_agreement">用户服务协议</string>
+    <string name="guide_login_tips_two">登录后即可查看评论回复、点赞及关注等通知信息</string>
+    <string name="guide_login_tips_three">别错过重要的信息</string>
+    <string name="guide_login_tips_four">点击登录后可关注主题和作者</string>
 </resources>

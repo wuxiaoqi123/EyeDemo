@@ -82,5 +82,5 @@ dependencies {
     kapt 'com.github.bumptech.glide:compiler:4.9.0'
     implementation 'jp.wasabeef:glide-transformations:4.1.0'
     implementation 'com.tencent.sonic:sdk:3.1.0'
-
+    implementation 'com.shuyu:GSYVideoPlayer:7.1.3'
 }
